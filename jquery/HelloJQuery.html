@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" ></script>
+</head>
+<body>
+      
+<h1 id="head1">Hello Lorem ipsum dolor sit.</h1>
+<button id="show">show</button>
+<button id="hide">hide</button>
+<button id="toggle">toggle</button>
+<button id="change">Change Style</button>
+    
+<script>
+    $(document).ready(()=>{
+        console.log("page loaded ");
+
+        $("#head1").click(function(){
+            this.style.color="red";
+        });
+
+        $("#show").click(()=>{
+            $("#head1").fadeIn(2000);
+        })
+        $("#hide").click(()=>{
+            $("#head1").fadeOut(2000);
+        })
+        $("#toggle").click(()=>{
+            $("#head1").fadeToggle(2000);
+        })
+
+
+    });
+
+    $("#change").on("click",function(e) 
+    {
+        $("#head1").css({
+            "color":"red",
+            "border-radius":"15px",
+            backgroundColor:"greenyellow"
+        });
+        // console.log(this);
+        let elem=document.createElement("h1");
+        elem.innerHTML="Hello";
+        $("body").prepend(elem);
+
+    })
+
+    document.querySelector("#change").addEventListener("click",()=>{
+        let h1Obj=document.querySelector("#head1");
+        h1Obj.style.color="red";
+        h1Obj.style.backgroundColor="greenyellow";
+        h1Obj.style.borderRadius="15px";
+        h1Obj.style.border="2px solid red";
+    })
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
