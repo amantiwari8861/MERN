@@ -1,0 +1,10 @@
+{
+    "id":101,
+    "name":"Aman Tiwari",
+    "age":25,
+    "skills":["C","C++","MEAN","MERN","JAVA FSD","etc"],
+    "address":{
+        "city":"gurugram",
+        "pincode":122001
+    }
+}

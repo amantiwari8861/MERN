@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // let arr=[10,20,30,40,50];
+    // console.warn(arr);
+
+    let user={
+        id:101,
+        name:"Aman Tiwari",
+        age:25,
+        skills:["C","C++","MEAN","MERN","JAVA FSD","etc"],
+        address:{
+            city:"gurugram",
+            pincode:122001
+        }
+    };
+    // console.log(user);
+    // console.log("user:"+user);
+    // document.write(user);
+
+    //js object to string
+    let userString=JSON.stringify(user);
+    console.log(typeof(userString));
+    // JSON -> javascript object notation
+    // document.write(userString);
+    // console.log("user :"+userString);
+
+    let userObj=JSON.parse(userString);
+    console.log(typeof(userObj));
+
+    console.log(userObj.name);
+    console.log(userObj.skills);
+    console.log(userObj.address.city);
+    
+</script>
+
+</body>
+</html>
