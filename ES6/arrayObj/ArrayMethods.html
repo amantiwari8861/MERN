@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+
+        // // 1. Adding/Removing Elements
+        // console.log("Original array:", arr);
+
+        // arr.push(6); // Adds 6 to the end
+        // console.log("After push:", arr);
+
+        // arr.pop(); // Removes last element (6)
+        // console.log("After pop:", arr);
+
+        // arr.unshift(0); // Adds 0 to the start
+        // console.log("After unshift:", arr);
+
+        // arr.shift(); // Removes first element (0)
+        // console.log("After shift:", arr);
+
+        // arr.splice(1, 3, 'a', 'b'); // Removes 3 elements from index 1, inserts 'a', 'b'
+        // console.log("After splice:", arr);
+
+        // const newArr = arr.concat([7, 8]); // Merges arr with [7, 8]
+        // console.log("After concat:", newArr);
+
+        // const slicedArr = newArr.slice(1, 4); // Extracts from index 1 to 3
+        // console.log("After slice:", slicedArr);
+
+        // // // 2. Searching and Indexing
+        // console.log("Index of 'a':", arr.indexOf('a')); // Finds index of 'a'
+        // console.log("Last index of 'b':", arr.lastIndexOf('b')); // Last index of 'b'
+        // console.log("Includes 5?:", newArr.includes(5)); // Checks if 5 is in the array
+
+        // const found = newArr.find(num => num > 5); // Finds first element > 5
+        // console.log("Found > 5:", found);
+
+        // const foundIndex = newArr.findIndex(num => num > 5); // Index of first element > 5
+        // console.log("Index of first > 5:", foundIndex);
+
+        // // 3. Iteration
+        // arr.forEach(num => console.log("num=", num)); // Logs each element
+
+        // const mappedArr = newArr.map(num => num * 2); // Doubles each element
+        // console.log("Mapped array:", mappedArr);
+
+        // const filteredArr = newArr.filter(num => num > 4); // Filters elements > 4
+        // console.log("Filtered array:", filteredArr);
+
+        // const reducedSum = newArr.reduce((acc, num) => acc + num, 0); // Sum of all elements
+        // console.log("Reduced sum:", reducedSum);
+
+        //sum of all numbers
+        // let sum=newArr.reduce((first,next)=>{
+        //     console.log(first,next);
+        //     return first+next;
+        // },0); 
+        // console.log(sum);
+
+        // // 4. Sorting and Reversing
+        // console.log(newArr.sort());
+        // const sortedArr = newArr.sort((a, b) => b - a); // Sorts in descending order
+        // console.log("Sorted array:", sortedArr);
+
+        // const reversedArr = sortedArr.reverse(); // Reverses the array
+        // console.log("Reversed array:", reversedArr);
+
+        // // 5. Joining and Converting
+        // console.log("Joined with '-':", newArr.join('-')); // Joins elements with '-'
+
+        // console.log("Array to string:", newArr.toString()); // Converts array to string
+
+        // // // 6. Copying and Filling
+        // const filledArr = newArr.fill(0, 2, 4); // Fills 0 from index 2 to 3
+        // console.log("After fill:", filledArr);
+
+
+        // const copiedArr = newArr.copyWithin(1, 3); // Copies elements from index 3 to index 1
+        // console.log("After copyWithin:", copiedArr);
+
+        // // 7. Flattening
+        const nestedArr = [1, [2, [3, 4]]];
+        // console.log(nestedArr);
+        const flatArr = nestedArr.flat(2); // Flattens the array to a depth of 2
+        console.log("Flattened array:", flatArr);
+
+        const flatMappedArr = flatArr.flatMap(num => [num, num * 2]); // Maps and flattens
+        console.log("Flat mapped array:", flatMappedArr);
+
+        // 8. Checking if it's an array
+        // console.log("Is it an array?:", Array.isArray(arr)); // Checks if it's an array
+
+    </script>
+</body>
+
+</html>
+
+<!-- H.w : string method,date ,Math  -->
+kapil 17171
