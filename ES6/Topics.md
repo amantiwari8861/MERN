@@ -11,8 +11,8 @@
 * hoisting
 * array,string,date methods like map,reduce,filter etc.
 
-* array and objects desctructuring
 * rest and spread operator
+* array and objects desctructuring
 * closures
 * event capturing and bubbling
 * exception handling 
