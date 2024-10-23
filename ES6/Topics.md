@@ -10,9 +10,10 @@
 * array and objects
 * hoisting
 * array,string,date methods like map,reduce,filter etc.
-
 * rest and spread operator
-* array and objects desctructuring
+
+
+* array and objects destructuring
 * closures
 * event capturing and bubbling
 * exception handling 
