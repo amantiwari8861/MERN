@@ -11,12 +11,12 @@
 * hoisting
 * array,string,date methods like map,reduce,filter etc.
 * rest and spread operator
-
-
 * array and objects destructuring
 * closures
+* error handling 
+
+
 * event capturing and bubbling
-* exception handling 
 * asyncronous programming
 * class and inheritance
 * import and export
