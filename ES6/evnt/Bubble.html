@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grandparent{
+            height: 300px;
+            width: 300px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .parent{
+            height: 200px;
+            width: 200px;
+            background-color: purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .child{
+            height: 100px;
+            width: 100px;
+            background-color: greenyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="grandparent" onclick="grandparent()">
+    <div class="parent" >
+        <div class="child" >
+        </div>
+    </div>
+</div>
+
+<script>
+function grandparent() {
+    alert("grand parent")
+}
+// function parent() {
+//     event.stopPropagation();
+//     alert("parent")
+// }
+// function child() {
+//     event.stopPropagation();
+//     alert("child");
+// }
+document.querySelector(".parent")
+.addEventListener("click",(e)=>{
+    console.log(e);
+    alert("parent ");
+})
+document.querySelector(".child")
+.addEventListener("click",(e)=>{
+    e.stopPropagation()
+    console.log(e);
+
+    alert("child ");
+})
+</script>
+</body>
+</html>
