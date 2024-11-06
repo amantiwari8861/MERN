@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13';
+        // const options = {
+        //     method: 'GET',
+            // headers: {
+            //     'X-RapidAPI-Key': '80c2a501c0msh74e2c3293ef64d5p1bac13jsna46d0eb9e685',
+            //     'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            // }
+        // };
+
+        // let fetchPromise=fetch(url, options)
+
+        const url = 'https://jsonplaceholder.typicode.com/todos';
+        let fetchPromise=fetch(url)
+        console.log(fetchPromise);
+        fetchPromise
+        .then(response=>response.json())
+        .then(data=>console.log(data))
+        .catch((error)=>console.log("dobara check karo"))
+
+
+
+
+        async function getDataFromWebsite()
+        {
+            let response= await fetch(url);
+            let data=await response.text();
+            console.log(data);
+        }
+        getDataFromWebsite()
+    </script>
+</body>
+
+</html>

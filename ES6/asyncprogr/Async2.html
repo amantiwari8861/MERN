@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+
+    <script>
+        let res=document.querySelector("#result");
+
+        let t1=setTimeout(()=>{
+            let i;
+            for ( i = 0; i < 100000; i++) 
+            {
+                res.innerHTML=i;
+                console.log(i);
+            }
+        },3000);
+
+        // setTimeout(()=>{
+        //     res.innerHTML+=new Date()+"<br>";
+        // },1000);
+        // setTimeout(()=>{
+        //     res.innerHTML+=new Date()+"<br>";
+        // },2000);
+
+        clearTimeout(t1);
+
+        let clock=setInterval(() => {
+            res.innerHTML=new Date();
+        }, 1000);
+
+        function stop() {
+            clearInterval(clock);
+        }
+        console.log(new Date().getDay());
+
+    </script>
+    <button onclick="stop()">stop</button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let sum=()=>{
+        console.log("hello i am add fxn");
+    }
+
+    // console.log(sum); //function reference
+    // sum();// calling of function
+
+    function getFxn(f) // here f is holding callback of any fxn
+    {
+        f()
+    }
+    getFxn(sum);
+
+</script>
+
+
+
+</body>
+</html>

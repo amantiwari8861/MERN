@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script>
+        
+        setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 1s 6th one <br>";
+        },1000);
+// for (let i = 0; i < 100000000000; i++) 
+        // for (let i = 0; i < 10000000; i++) 
+        // for (let i = 0; i < 1000; i++) 
+        // {
+        //    console.log(i);
+        // }
+        let res=document.querySelector("#result");
+        res.innerHTML=("Hii<br>");
+        // res.innerHTML=("i ran 100000 times<br>");
+        setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 1s<br>";
+        },1000);
+        setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 4s<br>";
+        },4000);
+        setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 6s<br>";
+        },6000);
+        setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 1s 2nd one <br>";
+        },1000);setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 1s 3rd one <br>";
+        },1000);setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 1s 4th one <br>";
+        },1000);setTimeout(()=>{
+            res.innerHTML+=new Date()+" after 1s 5th one <br>";
+        },1000);
+        res.innerHTML+="Byeee <br>";
+    </script>
+</body>
+</html>

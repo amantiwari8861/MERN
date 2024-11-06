@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '80c2a501c0msh74e2c3293ef64d5p1bac13jsna46d0eb9e685',
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            }
+        };
+        (async function test() {
+            
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                console.log(result);
+            } catch (error) {
+                console.error(error);
+            }
+        })();
+    </script>
+
+    you must install Node.js application
+
+
+</body>
+
+</html>
