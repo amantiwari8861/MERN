@@ -12,51 +12,55 @@ tannu kaushik 18248
 vishal 18587
 nikhil vyas 18453
 shamsi 18414
-deepanshu 18626
 pawan 18632
-mahipal 18386
-neha parmaar 18067
 ramandeep 18690
 ritika garg 18170
-laik 18267
 abhishek parikh 17780
-ankit 18058
-harshit 18144
 ayush 18285
-dhruv 17298
-nitin  18310
 jyoti 18249
 deepshikha 17143
 naveen 18808
 chirag 18488
 abhijeet 17654
-annu 18614 
-sunny 18627
-anshu 18103
-seema 18399
-
-
 sonakshi 17945
 aman verma 18566
 ashutosh 18634
 didina 17958
 sourabh 17737
 kushal 17968
+omveer 18583
+aakansha 18358
+kapil 17171
+vivek 18041
+
+
+
 Ritik Rana 16974
 aryan 17789
 Ruchi 17531
 Niraj 17913
-brashmi 17638
-omveer 18583
-aakansha 18358
 swatantra 18404
 sahil 18189
 vasudev 18135
 shubham 18490
 tanishq 18162
 achal 18411
-Srashti Dwivedi 18100
-kapil 17171
 chandan 17429
-vivek 18041
 krishna gupta 18192
+Srashti Dwivedi 18100
+mahipal 18386
+parvinder 18117 
+vishal parikh 17781
+
+
+deepanshu 18626
+neha parmaar 18067
+laik 18267
+dhruv 17298
+nitin  18310
+harshit 18144
+ankit 18058
+annu 18614 
+sunny 18627
+anshu 18103
+seema 18399

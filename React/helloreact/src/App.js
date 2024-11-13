@@ -2,6 +2,10 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import Layout from './components/Layout';
+import { Route, Routes } from 'react-router-dom';
+import SignIn from './components/signin/SignIn';
+import Home from './components/home/Home';
+import Register from './components/register/Register';
 // function App() {
 //   return (<h1>Hello World in React</h1>);
 // }
@@ -35,6 +39,13 @@ import Layout from './components/Layout';
 // );
 
 let App=()=>(
-  <Layout/>
+
+  <Routes>
+    <Route path='/' element={<Layout/>}>
+      <Route path='login' element={<SignIn/>}/>
+      <Route path='register' element={<Register/>}/>
+      <Route path='home' element={<Home/>}/>
+    </Route>
+  </Routes>
 );
 export default App;
