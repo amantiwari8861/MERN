@@ -1,24 +1,19 @@
 W/D Am WebD@2:30
 abhinav 18363
-renu 18606
 ravi singh 17413
 khushi 18522
 mahi 17739
 vinayak   18573
 rishi 18769
 samir 18604
-rashmi 17638
 tannu kaushik 18248
 vishal 18587
 nikhil vyas 18453
 shamsi 18414
-pawan 18632
 ramandeep 18690
 ritika garg 18170
-abhishek parikh 17780
 ayush 18285
 jyoti 18249
-deepshikha 17143
 naveen 18808
 chirag 18488
 abhijeet 17654
@@ -32,12 +27,32 @@ omveer 18583
 aakansha 18358
 kapil 17171
 vivek 18041
+Ruchi 17531
+seema 18399
+mahipal 18386
+harshit 18144
+laik 18267
+sunny 18627
 
 
 
+
+
+
+renu 18606
+rashmi 17638
+deepshikha 17143
+pawan 18632
+abhishek parikh 17780
+deepanshu 18626
+neha parmaar 18067
+dhruv 17298
+nitin  18310
+ankit 18058
+annu 18614 
+anshu 18103
 Ritik Rana 16974
 aryan 17789
-Ruchi 17531
 Niraj 17913
 swatantra 18404
 sahil 18189
@@ -48,19 +63,5 @@ achal 18411
 chandan 17429
 krishna gupta 18192
 Srashti Dwivedi 18100
-mahipal 18386
 parvinder 18117 
 vishal parikh 17781
-
-
-deepanshu 18626
-neha parmaar 18067
-laik 18267
-dhruv 17298
-nitin  18310
-harshit 18144
-ankit 18058
-annu 18614 
-sunny 18627
-anshu 18103
-seema 18399
