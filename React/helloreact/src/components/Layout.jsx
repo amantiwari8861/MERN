@@ -9,7 +9,7 @@ const Layout = () => {
     <Navbar/>
     <Outlet/>
     {/* <Counter/> */}
-    <User/>
+    {/* <User/> */}
     {/* <Navbar/>
     <Navbar/>
     <Navbar/>

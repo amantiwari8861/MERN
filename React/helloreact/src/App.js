@@ -6,6 +6,9 @@ import { Route, Routes } from 'react-router-dom';
 import SignIn from './components/signin/SignIn';
 import Home from './components/home/Home';
 import Register from './components/register/Register';
+import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
+import NotFound from './components/NotFound';
 // function App() {
 //   return (<h1>Hello World in React</h1>);
 // }
@@ -45,6 +48,9 @@ let App=()=>(
       <Route path='login' element={<SignIn/>}/>
       <Route path='register' element={<Register/>}/>
       <Route path='home' element={<Home/>}/>
+      <Route path='about' element={<AboutUs/>}/>
+      <Route path='contact' element={<ContactUs/>}/>
+      <Route path='*' element={<NotFound/>}/>
     </Route>
   </Routes>
 );

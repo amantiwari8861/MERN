@@ -1,34 +1,40 @@
+import { Link } from 'react-router-dom'
 import './register.css'
 const Register = () => {
     return (
-        <form class="form">
-            <p class="title">Register </p>
-            <p class="message">Signup now and get full access to our app. </p>
-            <div class="flex">
+        <div className="d-flex justify-content-center mt-3">
+            <form className="form">
+                <p className="title">Register </p>
+                <p className="message">Signup now and get full access to our app. </p>
+                <div className="flex">
+                    <label>
+                        <input className="input" type="text" placeholder="" required="" />
+                        <span>Firstname</span>
+                    </label>
+
+                    <label>
+                        <input className="input" type="text" placeholder="" required="" />
+                        <span>Lastname</span>
+                    </label>
+                </div>
+
                 <label>
-                    <input class="input" type="text" placeholder="" required="" />
-                    <span>Firstname</span>
+                    <input className="input" type="email" placeholder="" required="" />
+                    <span>Email</span>
+                </label>
+
+                <label>
+                    <input className="input" type="password" placeholder="" required="" />
+                    <span>Password</span>
                 </label>
                 <label>
-                    <input class="input" type="text" placeholder="" required="" />
-                    <span>Lastname</span>
+                    <input className="input" type="password" placeholder="" required="" />
+                    <span>Confirm password</span>
                 </label>
-            </div>
-            <label>
-                <input class="input" type="email" placeholder="" required="" />
-                <span>Email</span>
-            </label>
-            <label>
-                <input class="input" type="password" placeholder="" required="" />
-                <span>Password</span>
-            </label>
-            <label>
-                <input class="input" type="password" placeholder="" required="" />
-                <span>Confirm password</span>
-            </label>
-            <button class="submit">Submit</button>
-            <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
-        </form>
+                <button className="submit">Submit</button>
+                <p className="signin">Already have an acount ? <Link to="/login">Signin</Link> </p>
+            </form>
+        </div>
     )
 }
 
