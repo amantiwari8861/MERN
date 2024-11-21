@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "name": "Aryan Dhankhar",
+        "email": "aryan.dhankhar@example.com",
+        "phone": "9876543210",
+        "address": {
+            "street": "Sector 14",
+            "city": "Gurugram",
+            "pincode": "122001"
+        },
+        "balance": 150000,
+        "accountType": "Savings",
+        "isActive": true
+    },
+    {
+        "id": 2,
+        "name": "Sneha Verma",
+        "email": "sneha.verma@example.com",
+        "phone": "9845123467",
+        "address": {
+            "street": "MG Road",
+            "city": "Bangalore",
+            "pincode": "560001"
+        },
+        "balance": 20000,
+        "accountType": "Current",
+        "isActive": true
+    },
+    {
+        "id": 3,
+        "name": "Rohan Gupta",
+        "email": "rohan.gupta@example.com",
+        "phone": "9123456789",
+        "address": {
+            "street": "Marine Drive",
+            "city": "Mumbai",
+            "pincode": "400001"
+        },
+        "balance": 120000,
+        "accountType": "Savings",
+        "isActive": true
+    },
+    {
+        "id": 4,
+        "name": "Priya Sharma",
+        "email": "priya.sharma@example.com",
+        "phone": "9987654321",
+        "address": {
+            "street": "Park Street",
+            "city": "Kolkata",
+            "pincode": "700016"
+        },
+        "balance": 5000,
+        "accountType": "Savings",
+        "isActive": false
+    },
+    {
+        "id": 5,
+        "name": "Vikas Malhotra",
+        "email": "vikas.malhotra@example.com",
+        "phone": "8765432190",
+        "address": {
+            "street": "Connaught Place",
+            "city": "New Delhi",
+            "pincode": "110001"
+        },
+        "balance": 80000,
+        "accountType": "Fixed Deposit",
+        "isActive": true
+    },
+    {
+        "id": 6,
+        "name": "Anjali Mehta",
+        "email": "anjali.mehta@example.com",
+        "phone": "9876512345",
+        "address": {
+            "street": "Civil Lines",
+            "city": "Jaipur",
+            "pincode": "302001"
+        },
+        "balance": 30000,
+        "accountType": "Current",
+        "isActive": true
+    },
+    {
+        "id": 7,
+        "name": "Rahul Kapoor",
+        "email": "rahul.kapoor@example.com",
+        "phone": "9123450987",
+        "address": {
+            "street": "Fort Road",
+            "city": "Chennai",
+            "pincode": "600001"
+        },
+        "balance": 45000,
+        "accountType": "Savings",
+        "isActive": false
+    },
+    {
+        "id": 8,
+        "name": "Meera Nair",
+        "email": "meera.nair@example.com",
+        "phone": "9987453210",
+        "address": {
+            "street": "Vyttila",
+            "city": "Kochi",
+            "pincode": "682019"
+        },
+        "balance": 60000,
+        "accountType": "Current",
+        "isActive": true
+    },
+    {
+        "id": 9,
+        "name": "Aditya Rao",
+        "email": "aditya.rao@example.com",
+        "phone": "9876401234",
+        "address": {
+            "street": "Gachibowli",
+            "city": "Hyderabad",
+            "pincode": "500032"
+        },
+        "balance": 90000,
+        "accountType": "Savings",
+        "isActive": true
+    },
+    {
+        "id": 10,
+        "name": "Ritika Chawla",
+        "email": "ritika.chawla@example.com",
+        "phone": "8997654321",
+        "address": {
+            "street": "Lal Darwaja",
+            "city": "Ahmedabad",
+            "pincode": "380001"
+        },
+        "balance": 40000,
+        "accountType": "Current",
+        "isActive": false
+    }
+]
