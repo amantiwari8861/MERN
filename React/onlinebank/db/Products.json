@@ -239,6 +239,61 @@
         "rate": 4.8,
         "count": 300
       }
+    },
+    {
+      "id": "102",
+      "title": "Adidas ",
+      "price": "5000",
+      "description": "Adida shoe",
+      "category": "men's clothing",
+      "image": "https://brand.assets.adidas.com/image/upload/v1717008412/Training_SS_24_Strength_global_Launch_What_shoes_should_you_wear_to_the_gym_image_Rapidmove_fc98ca311b.jpg",
+      "rating": {
+        "rate": "4.8"
+      }
+    },
+    {
+      "id": "102",
+      "title": "Adidas new shoe",
+      "price": "1000",
+      "description": "new shoe in market",
+      "category": "men's clothing",
+      "image": "https://brand.assets.adidas.com/image/upload/v1717008412/Training_SS_24_Strength_global_Launch_What_shoes_should_you_wear_to_the_gym_image_Rapidmove_fc98ca311b.jpg",
+      "rating": {
+        "rate": "4.6"
+      }
+    },
+    {
+      "id": "102",
+      "title": "Adidas new shoe",
+      "price": "1000",
+      "description": "new shoe in market",
+      "category": "men's clothing",
+      "image": "https://brand.assets.adidas.com/image/upload/v1717008412/Training_SS_24_Strength_global_Launch_What_shoes_should_you_wear_to_the_gym_image_Rapidmove_fc98ca311b.jpg",
+      "rating": {
+        "rate": "4.6"
+      }
+    },
+    {
+      "id": "102",
+      "title": "Adidas new shoe",
+      "price": "1000",
+      "description": "new shoe in market",
+      "category": "men's clothing",
+      "image": "https://brand.assets.adidas.com/image/upload/v1717008412/Training_SS_24_Strength_global_Launch_What_shoes_should_you_wear_to_the_gym_image_Rapidmove_fc98ca311b.jpg",
+      "rating": {
+        "rate": "4.6"
+      }
+    },
+    {
+      "id": "103",
+      "title": "Puma Shoe",
+      "price": "3000",
+      "description": "new design shoe",
+      "category": "men's clothing",
+      "image": "https://brand.assets.adidas.com/image/upload/v1717008412/Training_SS_24_Strength_global_Launch_What_shoes_should_you_wear_to_the_gym_image_Rapidmove_fc98ca311b.jpg",
+      "rating": {
+        "rate": "3.9"
+      }
     }
   ]
 }

@@ -10,9 +10,7 @@ const Card = ({ product }) => {
                 <div className="">
                     <img src={product.image} alt="" className='w-full min-h-80 max-h-80' style={imgStyle} height="200px" />
                 </div>
-                {/* {console.log(product.title)} */}
-                {/* {console.log(product.title.length())} */}
-                {/* <h2 className="card-header">{product.title.length>20 ? product.title.substr(0,20)+"..." : product.title  }</h2> */}
+                <h2 className="card-header">{product.id +" : "+product.title  }</h2>
                 <p className="text-content2">{product?.description?.substr(0, 30)}</p>
                 <div className="card-footer">
                     <button className="btn-secondary btn">${product.price}</button>

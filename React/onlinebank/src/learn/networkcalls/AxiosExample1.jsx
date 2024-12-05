@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 import Card from "../../components/Card";
 import axios from "axios";
+import AddProduct from "../../components/AddProduct";
 
 // const URL = "https://fakestoreapi.com/products/";
 const URL = "http://localhost:3000/products/";
 const AxiosExample1 = () => {
 
   const [products, setProducts] = useState([]);
+  const [isProductAdded, setProductAdded] = useState(404);
   useEffect(() => {
     getAllProducts();
-  }, []);
+  }, [products]);
 
   const getAllProducts = async () => {
     try {
@@ -24,9 +26,21 @@ const AxiosExample1 = () => {
     // console.log(data);
   }
 
+  const addProduct = async (data) => {
+
+    const response = await axios.post(URL, data);
+    setProductAdded(response.status);
+    console.log(response);
+
+  }
 
   return (
     <div>
+      <h1>
+
+        {isProductAdded === 201 ? "Product Added Succesfully!" : "Unable to add product!"}
+      </h1>
+      <AddProduct addProduct={addProduct} />
       {/* {JSON.stringify(products)} */}
       {/* {product.id} <br />
       {product.title} <br />
