@@ -48,9 +48,7 @@ const AxiosExample1 = () => {
   const editProduct=(pro)=>{
 
     setProductToEdit(pro)
-    setModelOpen(true);
-
-
+    setModelOpen(true);    
   }
 
 
@@ -60,7 +58,7 @@ const AxiosExample1 = () => {
 
         {isProductAdded === 201 ? "Product Added Succesfully!" : "Unable to add product!"}
       </h1>
-      {isModalOpen && <Modal isOpen={isModalOpen}  product={productToEdit}/>}
+      {isModalOpen && <Modal isOpen={isModalOpen}  product={productToEdit} addProduct={addProduct}/>}
       <AddProduct addProduct={addProduct} />
       {/* {JSON.stringify(products)} */}
       {/* {product.id} <br />

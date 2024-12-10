@@ -1,19 +1,42 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const URL = "http://localhost:3000/products/";
-function AddProduct({addProduct}) {
+function AddProduct({addProduct,product}) {
+
+    const [prod,setProduct]=useState({
+        id:"",
+        title:"",
+        image:"",
+        price:"",
+        rating:{rate:""},
+        ...product,
+    });
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
 
+    useEffect(()=>{
+        console.log(prod); 
+    },[prod]);
+
     const onSubmit = (data) => {
         console.log('Submitted Data:', data);
         addProduct(data);
     };
+    const handleUpdate=(e)=>{
+        console.log(e);
+        
+        let {id,value}=e.target;
+        setProduct({
+            ...prod,
+            [id]:value
+        })
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: '400px', margin: 'auto', padding: "10px" }} className='text-black bg-white'>
@@ -22,6 +45,8 @@ function AddProduct({addProduct}) {
                 <label htmlFor="id">Product ID</label>
                 <input className='bg-white text-dark mt-3 border'
                     id="id"
+                    value={prod.id}
+                    onChange={handleUpdate}
                     {...register('id', {
                         required: 'Product ID is required.',
                         pattern: {
@@ -38,6 +63,9 @@ function AddProduct({addProduct}) {
                 <label htmlFor="title">Title</label>
                 <input className='bg-white text-dark mt-3 border'
                     id="title"
+                    value={prod.title}
+                    onChange={handleUpdate}
+
                     {...register('title', {
                         required: 'Title is required.',
                         minLength: { value: 5, message: 'Title must be at least 5 characters.' },
@@ -53,6 +81,9 @@ function AddProduct({addProduct}) {
                     id="price"
                     type="number"
                     step="0.01"
+                    value={prod.price}
+                    onChange={handleUpdate}
+
                     {...register('price', {
                         required: 'Price is required.',
                         min: { value: 0.01, message: 'Price must be greater than 0.' },
@@ -66,6 +97,9 @@ function AddProduct({addProduct}) {
                 <label htmlFor="description">Description</label> <br />
                 <textarea className='bg-white text-dark mt-3 border'
                     id="description"
+                    value={prod.description}
+                    onChange={handleUpdate}
+
                     {...register('description', {
                         required: 'Description is required.',
                         minLength: { value: 10, message: 'Description must be at least 10 characters.' },
@@ -79,6 +113,9 @@ function AddProduct({addProduct}) {
                 <label htmlFor="category">Category</label>
                 <select className='bg-white text-dark mt-3 border'
                     id="category"
+                    value={prod.category}
+                    onChange={handleUpdate}
+
                     {...register('category', {
                         required: 'Category is required.',
                     })}
@@ -98,6 +135,9 @@ function AddProduct({addProduct}) {
                 <input className='bg-white text-dark mt-3 border'
                     id="image"
                     type="url"
+                    value={prod.image}
+                    onChange={handleUpdate}
+
                     {...register('image', {
                         required: 'Image URL is required.',
                         pattern: {
@@ -116,13 +156,16 @@ function AddProduct({addProduct}) {
                     id="rate"
                     type="number"
                     step="0.1"
+                    value={prod.rating.rate || ""}
+                    onChange={handleUpdate}
+
                     {...register('rating.rate', {
                         required: 'Rating rate is required.',
                         min: { value: 0, message: 'Rate must be at least 0.' },
                         max: { value: 5, message: 'Rate must be at most 5.' },
                     })}
                 />
-                {errors.rating?.rate && <p style={{ color: 'red' }}>{errors.rating.rate.message}</p>}
+                {errors.rating?.rate && <p style={{ color: 'red' }}>{errors.rating?.rate.message}</p>}
             </div>
             <button type="submit" style={{ marginTop: '20px', backgroundColor: "black", color: 'white' }}>Submit</button>
         </form>
