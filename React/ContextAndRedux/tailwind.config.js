@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import rippleui from "rippleui";
-
+import rippleui from 'rippleui'
 export default {
   content: [
     "./index.html",
@@ -9,6 +8,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [rippleui]
+  plugins: [rippleui],
 }
 

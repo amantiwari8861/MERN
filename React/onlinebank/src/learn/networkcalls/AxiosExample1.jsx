@@ -1,77 +1,91 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import axios from "axios";
 import AddProduct from "../../components/AddProduct";
 import Modal from "../../components/Modal";
 
-// const URL = "https://fakestoreapi.com/products/";
 const URL = "http://localhost:3000/products/";
+
 const AxiosExample1 = () => {
+    const [products, setProducts] = useState([]);
+    const [isProductAdded, setProductAdded] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [productToEdit, setProductToEdit] = useState(null);
+    const [openAddProduct,setOpenAddProduct]=useState(false);
+    useEffect(() => {
+        getAllProducts();
+    }, []);
 
-  const [products, setProducts] = useState([]);
-  const [isProductAdded, setProductAdded] = useState(404);
-  const [isModalOpen, setModelOpen] = useState(false);
-  const [productToEdit,setProductToEdit]=useState(null);
-
-  useEffect(() => {
-    getAllProducts();
-  }, [products]);
-
-  const getAllProducts = async () => {
-    try {
-      const response = await axios.get(URL);
-      const data = await response.data;
-      setProducts(data);
-    }
-    catch (error) {
-      // console.log(error);
-      console.log(error.message);
-    }
-    // console.log(data);
-  }
-
-  const addProduct = async (data) => {
-
-    const response = await axios.post(URL, data);
-    setProductAdded(response.status);
-    console.log(response);
-
-  }
-
-  const deleteProduct = async (id) => {
-    const response = await axios.delete(URL + id);// delete http://localhost:3000/products/:id
-    console.log(response);
-    setProducts(products.filter(p => p.id !== id));
-    alert("product deleted !");
-  }
-
-  const editProduct=(pro)=>{
-
-    setProductToEdit(pro)
-    setModelOpen(true);    
-  }
-
-
-  return (
-    <div>
-      <h1>
-
-        {isProductAdded === 201 ? "Product Added Succesfully!" : "Unable to add product!"}
-      </h1>
-      {isModalOpen && <Modal isOpen={isModalOpen}  product={productToEdit} addProduct={addProduct}/>}
-      <AddProduct addProduct={addProduct} />
-      {/* {JSON.stringify(products)} */}
-      {/* {product.id} <br />
-      {product.title} <br />
-      <img src={product.image} alt="" height={"200px"} width={"200px"}/> */}
-      <div className="flex gap-5 overflow-x-auto flex-wrap align-middle justify-center">
-        {
-          products.length > 0 ? products.map((p, i) => <Card key={i} product={p} deleteProduct={deleteProduct} editPro={editProduct} />) : "Unable to fetch data from server"
+    const getAllProducts = async () => {
+        try {
+            const response = await axios.get(URL);
+            setProducts(response.data);
+        } catch (error) {
+            console.log("Error fetching products:", error.message);
         }
-      </div>
-    </div>
-  )
-}
-
-export default AxiosExample1
-//https://documenter.getpostman.com/view/20203345/2sAYBa9pfh
+    };
+    const addProduct = async (data) => {
+        try {
+            const response = await axios.post(URL, data);
+            setProductAdded(response.status === 201);
+            getAllProducts(); // Refresh product list
+        } catch (error) {
+            console.log("Error adding product:", error.message);
+        }
+        setOpenAddProduct(false);
+    };
+    const deleteProduct = async (id) => {
+        try {
+            await axios.delete(`${URL}${id}`);
+            setProducts(products.filter((p) => p.id !== id));
+            alert("Product deleted!");
+        } catch (error) {
+            console.log("Error deleting product:", error.message);
+        }
+    };
+    const editProduct =async (product) => {
+        setProductToEdit(product);
+        setModalOpen(true);
+        console.log("Editing ", product, isModalOpen);
+    };
+    const editProductCall=async (product)=>{
+        try{
+        console.log("editing the product",product);
+        const response=axios.put(`${URL}${product.id}`, product);
+        console.log(response);
+        alert("product edited succesfully!");
+        getAllProducts();
+        }
+        catch (error) {
+            console.log("Error editing products:", error.message);
+        }
+    }
+    return (
+        <div>
+            <h1 className="text-center text-3xl">{isProductAdded ? "Product Added Successfully!" : "Manage Products"}</h1>
+            {console.log("modal open ? ", isModalOpen)}
+            {isModalOpen && <Modal
+                isOpen={isModalOpen}
+                product={productToEdit}
+                editProductCall={editProductCall}
+                onClose={() => setModalOpen(false)}
+            />
+            }
+            <button className="btn btn-primary" onClick={()=>setOpenAddProduct(true)}>Add Product</button>
+            { openAddProduct ? <AddProduct addProduct={addProduct} /> : " "}
+            <div className="flex gap-5 overflow-x-auto flex-wrap align-middle justify-center py-10">
+                {products.length > 0
+                    ? products.map((p, i) => (
+                        <Card
+                            key={i}
+                            product={p}
+                            deleteProduct={deleteProduct}
+                            editPro={editProduct}
+                        />
+                    ))
+                    : "Unable to fetch data from server"}
+            </div>
+        </div>
+    );
+};
+export default AxiosExample1;

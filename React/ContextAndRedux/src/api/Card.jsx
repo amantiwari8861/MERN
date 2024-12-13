@@ -1,6 +1,6 @@
 import "../App.css";
 
-const Card = ({ product, deleteProduct, editPro }) => {
+const Card = ({ product }) => {
     const {
         id = "",
         title = "No Title",
@@ -52,13 +52,11 @@ const Card = ({ product, deleteProduct, editPro }) => {
                 <div className="flex justify-around mt-4">
                     <button
                         className="btn btn-primary btn-sm"
-                        onClick={() => editPro(product)}
                     >
                         Edit
                     </button>
                     <button
                         className="btn btn-error btn-sm"
-                        onClick={() => deleteProduct(id)}
                     >
                         Delete
                     </button>
