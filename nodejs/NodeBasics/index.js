@@ -5,6 +5,7 @@
 // console.log("Hello World !");
 
 
+
 // console.log(PI);
 
 // let {PI,add}=mylib;
@@ -31,18 +32,17 @@
 // CRUD or ERP or CRM
 
 require('dotenv').config();
-const { testVar } = require("./modules/fsmodule/AsyncFS");
-const { readFileSyncr, writeFileSyncr, appendFileSyncr, deleteFileSync } = require("./modules/fsmodule/SyncronizedFS");
+// const { readFileSyncr, writeFileSyncr, appendFileSyncr, deleteFileSync } = require("./modules/fsmodule/SyncronizedFS");
 // readFileSyncr()
 // writeFileSyncr(); 
 // appendFileSyncr();
 // deleteFileSync("modules/fsmodule/Hello.txt");
-
-console.log(process.env.JAVA_HOME);
-
-
+// console.log(process.env.JAVA_HOME);
 // console.log(process.env);
 // console.log(process.env.JSON_FILE_PATH);
 
+const { readJsonFile, writeJsonFile, appendInJsonFile } = require('./modules/fsmodule/AsyncFsOnJson');
 
-// testVar();
+// readJsonFile();
+// writeJsonFile();
+appendInJsonFile();

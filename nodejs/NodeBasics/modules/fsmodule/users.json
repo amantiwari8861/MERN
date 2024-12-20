@@ -1,3 +1,14 @@
 {
-    "id":100,"name":"Aman","greet":"Aman"
+    "users": [
+        {
+            "id": 100,
+            "name": "Aman Tiwari",
+            "mobileNo": 8448179216
+        },
+        {
+            "id": 100,
+            "name": "Aman Tiwari",
+            "mobileNo": 8448179216
+        }
+    ]
 }
