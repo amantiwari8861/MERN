@@ -1,38 +1,45 @@
 W/D Am React@2:30
-vasudev parikh 18135
-vishal parikh 17781
+sonakshi 17945
+naveen 18808
+ashutosh 18634
+ayush 18285
+mahipal 18386
+rashmi 17638
+rishi 18769
 samir 18604
 vishal 18587
-sonakshi 17945
-rashmi 17638
+aman verma 18566
+jyoti 18249
+achal 18411
+ravi singh 17413
+
+
+
+ankit 18058
+chirag 18488
+
+
 abhijeet 17654
 kapil 17171
 dhruv 17298
-chirag 18488
 vivek 18041
 shamsi 18414
 shubham 18490
---online
-ashutosh 18634
-ravi singh 17413
-mahipal 18386
-rishi 18769
 didina 17958
 pawan 18632
-aman verma 18566
-jyoti 18249
 deepshikha 17143
 
 
+
+
+vasudev parikh 18135
+vishal parikh 17781
 renu 18606
-achal 18411
 swatantra 18404
 harshit 18144
-ayush 18285
 annu 18614 
 khushi 18522
 mahi 17739
-naveen 18808
 chandan 17429
 abhinav 18363
 
@@ -45,7 +52,6 @@ deepanshu 18626
 sunny 18627
 tannu kaushik 18248
 laik 18267
-ankit 18058
 kushal 17968
 nikhil vyas 18453
 Ruchi 17531

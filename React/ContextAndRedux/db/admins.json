@@ -1,0 +1,12 @@
+{
+  "admins": [
+    {
+      "id": "1000",
+      "fname": "Aman",
+      "lname": "Tiwari",
+      "email": "amantiwari8861@gmail.com",
+      "password": "1234",
+      "cpassword": "1234"
+    }
+  ]
+}

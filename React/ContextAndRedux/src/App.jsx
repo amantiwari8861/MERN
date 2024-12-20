@@ -1,42 +1,27 @@
-import { createContext } from "react"
-// import A from "./components/A"
-import Counter from "./redux/Counter";
-
-const user = {
-  id: 100,
-  name: "Aman Tiwari",
-  age: 25
-}
-
-const UserContext = createContext();
-
+import { Route, Routes } from "react-router-dom";
+import MainContainer from "./api/MainContainer";
+import EcomNav from "./components/EcomNav";
+import Layout from "./Layout";
+import Cart from "./components/Cart";
+import SignIn from "./api/SignIn";
+import StyledRegister from "./api/Register";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
     <>
-      <h1 className="bg-red-600">App Component :{JSON.stringify(user)}</h1>
-
-      <Counter/>
-
-
-      <UserContext.Provider value={user}>
-
-        {/* <A /> wrapping A in provider */}
-
-
-      </UserContext.Provider>
-
+      <EcomNav />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/products" element={<MainContainer />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/register" element={<StyledRegister />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </>
   )
 }
 
-export default App
-
-export { UserContext }
-
-
-// 1. Actions
-// 2. Reducers
-// 3. Store
-// 4. Slice
-// 5. use of dispatch and select 
+export default App 

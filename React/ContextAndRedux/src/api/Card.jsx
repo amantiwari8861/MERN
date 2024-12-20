@@ -1,4 +1,7 @@
+import { useDispatch, useSelector } from "react-redux";
 import "../App.css";
+import { addProduct, removeProduct } from "../redux/cartSlice";
+import { useEffect } from "react";
 
 const Card = ({ product }) => {
     const {
@@ -9,6 +12,9 @@ const Card = ({ product }) => {
         price = 0,
         rating = { rate: 0 },
     } = product || {};
+
+    const dispatch = useDispatch()
+    const isAuthenticated=useSelector(state=>state.user_principle.value.isAuthenticated);    
 
     return (
         <div className="card card-image-cover min-w-48 shadow-lg">
@@ -49,17 +55,19 @@ const Card = ({ product }) => {
                 </p>
 
                 {/* Action Buttons */}
-                <div className="flex justify-around mt-4">
-                    <button
-                        className="btn btn-primary btn-sm"
-                    >
-                        Edit
+                <div className="flex justify-around mt-2">
+                    <button className="btn btn-primary btn-sm" onClick={()=>dispatch(addProduct(product))}>
+                        Add to Cart
                     </button>
-                    <button
-                        className="btn btn-error btn-sm"
-                    >
-                        Delete
+                    <button className="btn btn-error btn-sm" onClick={()=>dispatch(removeProduct(product))}>
+                        Buy Now
                     </button>
+                    {isAuthenticated && <button className="btn btn-warning btn-sm" onClick={()=>dispatch(removeProduct(product))}>
+                        edit
+                    </button>}
+                    {isAuthenticated && <button className="btn btn-error btn-sm" onClick={()=>dispatch(removeProduct(product))}>
+                        delete
+                    </button>}
                 </div>
             </div>
         </div>
