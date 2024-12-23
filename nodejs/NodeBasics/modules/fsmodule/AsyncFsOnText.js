@@ -14,7 +14,7 @@ const readTextFile = () => {
 }
 
 const writeFile = () => {
-    fs.writeFile(JSON_FILE_PATH, JSON.stringify(user), (err) => {
+    fs.writeFile(TEXT_FILE_PATH, "Hello World 2!", (err) => {
         if (err) throw err;
         console.log('File written successfully');
     });

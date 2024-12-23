@@ -41,24 +41,65 @@ const appendInJsonFile = () => {
 }
 
 const postObject = () => {
-/*
-    read all data parse the push new object write in file 
-*/
+    /*
+        read all data parse the push new object write in file 
+    */
 }
-
 
 const renameJsonFile = () => {
-
+    fs.rename('modules/fsmodule/Hello.json',
+        'modules/fsmodule/newName.json', (err) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log('renamed file succesfully!');
+            }
+        });
+}
+const cutPasteJsonFile = () => {
+    fs.rename('modules/fsmodule/newName.json',
+        'newName.json', (err) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log('moved file succesfully!');
+            }
+        });
 }
 const watchJsonFile = () => {
-
+    fs.watch(JSON_FILE_PATH, (eventType, filename) => {
+        console.log(`Event type: ${eventType}`);
+        if (filename) {
+            console.log(`File affected: ${filename}`);
+        }
+    });
+    console.log("Watching started...");
 }
 const deleteJsonFile = () => {
-
+    fs.unlink('newName.json', (err) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log('deleted the file succesfully!');
+        }
+    });
 }
+
+const fspromise = require('fs/promises');
+async function readFilePromiseBased(DIR_NAME) {
+   try {
+       const data = await fspromise.readFile(DIR_NAME, 'utf8');
+       console.log(data);
+   } catch (err) {
+       console.error(err);
+   }
+}
+
 exports.readJsonFile = readJsonFile;
 exports.writeJsonFile = writeJsonFile;
 exports.appendInJsonFile = appendInJsonFile;
 exports.watchJsonFile = watchJsonFile;
 exports.renameJsonFile = renameJsonFile;
 exports.deleteJsonFile = deleteJsonFile;
+exports.cutPasteJsonFile = cutPasteJsonFile;
+exports.readFilePromiseBased = readFilePromiseBased;

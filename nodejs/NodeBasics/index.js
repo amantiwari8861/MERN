@@ -32,6 +32,7 @@
 // CRUD or ERP or CRM
 
 require('dotenv').config();
+const { readFilePromiseBased } = require('./modules/fsmodule/AsyncFsOnJson');
 // const { readFileSyncr, writeFileSyncr, appendFileSyncr, deleteFileSync } = require("./modules/fsmodule/SyncronizedFS");
 // readFileSyncr()
 // writeFileSyncr(); 
@@ -41,8 +42,22 @@ require('dotenv').config();
 // console.log(process.env);
 // console.log(process.env.JSON_FILE_PATH);
 
-const { readJsonFile, writeJsonFile, appendInJsonFile } = require('./modules/fsmodule/AsyncFsOnJson');
+// const { readJsonFile, writeJsonFile, appendInJsonFile, renameJsonFile, cutPasteJsonFile, watchJsonFile, deleteJsonFile } = require('./modules/fsmodule/AsyncFsOnJson');
+const { createDirectory, readDirectory, getDirStat, removeDirectory } = require('./modules/fsmodule/DirectoryOperations');
 
 // readJsonFile();
 // writeJsonFile();
-appendInJsonFile();
+// appendInJsonFile();
+// renameJsonFile();
+// cutPasteJsonFile();
+// watchJsonFile();
+// deleteJsonFile();
+
+// createDirectory("hello");
+// createDirectory("hello/hii.txt");// treated as folder
+// readDirectory(".");
+// getDirStat(".");
+// getDirStat("./index.js");
+// removeDirectory("hello")
+
+readFilePromiseBased(process.env.JSON_FILE_PATH);
