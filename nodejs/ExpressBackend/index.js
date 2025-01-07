@@ -1,16 +1,21 @@
 const express = require("express");
 const { authMiddleware } = require("./middlewares/AuthMiddleWare");
 const { loggingMiddleware } = require("./middlewares/LoggingMiddleWare");
+const { userRouter } = require("./routers/userRoutes");
 require("dotenv").config()
 
 const app = express();
 const HOST_NAME = process.env.HOST_NAME;
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
 app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 //application level middlewares
-app.use(authMiddleware);
+// app.use(authMiddleware);
 app.use(loggingMiddleware);
 
+app.use("/api/v1/users",userRouter);// http://localhost:5000/api/v1/users
+// app.use("/api/v1/admins",userRouter);// http://localhost:5000/api/v1/users
+// app.use("/api/v1/products",userRouter);// http://localhost:5000/api/v1/users
 
 app.listen(SERVER_PORT, HOST_NAME, (req, res) => {
     console.log(`Our application is listening on ${HOST_NAME} at port ${SERVER_PORT}`);

@@ -1,5 +1,6 @@
 const base64=require("base-64");
 
+//Application Level MiddleWare
 let authMiddleware = (req, res, next) => {
     console.log("authenticating...");
     console.log(req.headers);
@@ -20,7 +21,6 @@ exports.authMiddleware = authMiddleware;
 
 
 /*
-
     console.log(req.ip);
     console.log(req.get('Content-Type'));
     console.log(req.headers);
