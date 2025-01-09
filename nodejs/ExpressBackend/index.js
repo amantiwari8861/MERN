@@ -2,6 +2,8 @@ const express = require("express");
 const { authMiddleware } = require("./middlewares/AuthMiddleWare");
 const { loggingMiddleware } = require("./middlewares/LoggingMiddleWare");
 const { userRouter } = require("./routers/userRoutes");
+const testMongoose = require("./entities/testmongoose");
+const mongoose= require("mongoose");
 require("dotenv").config()
 
 const app = express();
@@ -35,6 +37,9 @@ app.use((err, req, res, next) => {
     console.error(err.stack)
     res.status(500).send('Something broke!')
 })
+
+mongoose.connect(process.env.MONGO_URI);
+
 /* console.log("Hello in express!");
 console.log(process.env.SERVER_PORT);
 console.log(process.env.HOST_NAME);
