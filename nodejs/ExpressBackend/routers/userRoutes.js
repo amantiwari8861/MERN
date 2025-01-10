@@ -1,7 +1,8 @@
 const { greet, getAllUsers, getUserById, addUser, updateUserBy_Id, deleteUserBy_Id, addAll, updateUserBy_userId, deleteUserBy_userId, validateUserCredentials } = require("../controllers/userController");
+const { authMiddleware } = require("../middlewares/AuthMiddleWare");
 
 const router = require("express").Router();
-
+router.use(authMiddleware);// Router level middleware
 router.get("/greet", greet);// get http://localhost:5000/api/v1/users/greet
 
 router.get("/", getAllUsers);// get http://localhost:5000/api/v1/users

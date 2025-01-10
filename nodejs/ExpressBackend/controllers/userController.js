@@ -108,6 +108,8 @@ let deleteUserBy_userId = async (req, res) => {
 const validateUserCredentials = async (req, res) => {
     try {
         const user = await userModel.validateUser(req.body.email, req.body.password);
+        console.log("user got from mongo db ",user);
+        
         res.status(200).json({ "msg": "User validated successfully", "data": user });
     } catch (error) {
         res.status(404).json({ "msg": error.message });
