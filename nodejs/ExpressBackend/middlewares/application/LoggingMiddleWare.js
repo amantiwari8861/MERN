@@ -3,4 +3,4 @@ let loggingMiddleware = (req, res, next) => {
     next();
 };
 
-exports.loggingMiddleware=loggingMiddleware;
+exports.loggingMiddleware = loggingMiddleware;

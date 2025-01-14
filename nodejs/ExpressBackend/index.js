@@ -1,19 +1,31 @@
 require("dotenv").config()
 const express = require("express");
-const { authMiddleware } = require("./middlewares/AuthMiddleWare");
-const { loggingMiddleware } = require("./middlewares/LoggingMiddleWare");
 const { userRouter } = require("./routers/userRoutes");
-const testMongoose = require("./entities/testmongoose");
 const mongoose = require("mongoose");
 const { loginRouter } = require("./routers/loginRouter");
+const { loggingMiddleware } = require("./middlewares/application/LoggingMiddleWare");
+const cors = require('cors');
+
+const morgan = require("morgan");
+const fs = require('fs');
+const path = require('path');
+const accessLogStream = fs.createWriteStream(
+    path.join(__dirname, 'access.log'), 
+    { flags: 'a' }
+);
 
 const app = express();
+// app.use(morgan("dev"));
+// Use Morgan to log into the file
+app.use(morgan('combined', { stream: accessLogStream }));
+app.use(cors({
+    origin: 'http://localhost:5173' // Replace with your frontend URL
+}));
 const HOST_NAME = process.env.HOST_NAME;
 const SERVER_PORT = process.env.SERVER_PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(loggingMiddleware);// app level middleware
-
 app.use("/api/v1/users", userRouter);// http://localhost:5000/api/v1/users
 // app.use("/api/v1/admins",userRouter);// http://localhost:5000/api/v1/users
 // app.use("/api/v1/products",userRouter);// http://localhost:5000/api/v1/users
@@ -37,7 +49,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!')
 })
 app.use("/api/v1",loginRouter);
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI).then(()=>console.log("mongoose connected with mongodb!"))
 
 /* console.log("Hello in express!");
 console.log(process.env.SERVER_PORT);

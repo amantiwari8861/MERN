@@ -1,7 +1,6 @@
 const base64=require("base-64");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt'); // Optional: for password hashing
-const userModel = require("../entities/UserModel");
 
 const SECRET_KEY = process.env.JWT_SECRET;
 function authenticateToken(req, res, next) {

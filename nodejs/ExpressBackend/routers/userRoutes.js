@@ -1,5 +1,5 @@
 const { greet, getAllUsers, getUserById, addUser, updateUserBy_Id, deleteUserBy_Id, addAll, updateUserBy_userId, deleteUserBy_userId, validateUserCredentials } = require("../controllers/userController");
-const { authMiddleware } = require("../middlewares/AuthMiddleWare");
+const { authMiddleware } = require("../middlewares/routerlevel/AuthMiddleWare");
 
 const router = require("express").Router();
 router.use(authMiddleware);// Router level middleware

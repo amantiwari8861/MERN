@@ -11,9 +11,15 @@ router.post("/login", async (req, res) => {
         res.send("will do later!");
     }
     else if (role === "user") {
-        const user = await userModel.validateUser(username, password);
-        const token = jwt.sign({ "id": user.id, "username": username, "role": "user" }, SECRET_KEY, { expiresIn: '1h' });
-        res.json({ token });
+        try {
+
+            const user = await userModel.validateUser(username, password);
+            const token = jwt.sign({ "id": user.id, "username": username, "role": "user" }, SECRET_KEY, { expiresIn: '1h' });
+            res.json({ token });
+        }
+        catch (err) {
+            res.json({ "msg": err.msg });
+        }
     }
 });
 
